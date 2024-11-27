@@ -1,5 +1,12 @@
 function Home() {
-    return <h1>Não é muito mas é um trabalho honesto!</h1>
+    return (
+        <body>
+            <h1>Lembre-se</h1>
+            <p>
+                <i>O Aprendizado é uma jornada, não uma corrida!</i>
+            </p>
+        </body>
+    )
 }
 
 export default Home;
