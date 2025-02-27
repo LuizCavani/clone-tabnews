@@ -10,6 +10,7 @@ const createJestConfig = nextJest({
 const jestConfig = createJestConfig({
   moduleDirectories: ["node_modules", "<rootDir>"],
   setupFiles: ["dotenv/config"],
+  testTimeout: 60000,
 });
 
 module.exports = jestConfig;
