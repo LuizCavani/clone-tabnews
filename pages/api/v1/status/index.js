@@ -1,6 +1,7 @@
 import database from "infra/database.js";
 
 async function status(request, response) {
+  let testActionRequiredForMerge;
   const databaseName = process.env.POSTGRES_DB;
   const databaseVersionResult = await database.query("SHOW server_version;");
   const maxConnectionsResult = await database.query("SHOW max_connections;");
