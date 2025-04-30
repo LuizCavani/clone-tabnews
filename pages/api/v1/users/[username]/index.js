@@ -4,7 +4,7 @@ import user from "models/user.js";
 
 const router = createRouter();
 
-router.get(getHandler);
+router.get(getHandler).patch(patchHandler);
 
 export default router.handler(controller.errorHandlers);
 
@@ -15,7 +15,11 @@ async function getHandler(request, response) {
   return response.status(200).json(userFound);
 }
 
-/**
- * /FilipeDeschamps
- * /311
- */
+async function patchHandler(request, response) {
+  const username = request.query.username;
+  const userInputValues = request.body;
+
+  const updatedUser = await user.update(username, userInputValues);
+
+  return response.status(200).json(updatedUser);
+}
