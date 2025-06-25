@@ -6,7 +6,7 @@ beforeAll(async () => {
 
 describe("GET /api/v1/status", () => {
   describe("Anonymous user", () => {
-    test("Retrieving curren system status", async () => {
+    test("Retrieving current system status", async () => {
       const response = await fetch("http://localhost:3000/api/v1/status");
       const responseBody = await response.json();
       const parserUpdatedAt = new Date(responseBody.updated_at).toISOString();
