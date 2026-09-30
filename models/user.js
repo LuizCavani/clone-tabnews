@@ -241,6 +241,8 @@ async function setFeatures(userId, features) {
           updated_at = timezone('utc', now())
         WHERE 
          id = $1
+        RETURNING
+          *
     ;`,
       values: [userId, features],
     });
